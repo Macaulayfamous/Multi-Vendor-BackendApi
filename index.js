@@ -18,7 +18,7 @@ const PORT = 3000;
 
 const app = express();
 //mongodb connection  String
-const DB = "your url"
+const DB = "mongodb+srv://macaulayfamous:beejaymac@cluster0.1sqrhdg.mongodb.net/"
 app.use(express.json());
 app.use(cors());///enable cors for all routes and origin
 app.use(authRouter);
@@ -29,6 +29,8 @@ app.use(productRouter);
 app.use(productReviewRouter);
 app.use(vendorRouter);
 app.use(orderRouter);
+
+
 mongoose.connect(DB).then(()=>{
  console.log('mongodb connected');
 });
